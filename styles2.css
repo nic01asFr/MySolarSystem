@@ -196,7 +196,7 @@ animation-play-state: paused ;
 .ellipse:hover{
 border-width: 20px 0px 0px 10px ;
 border-style: solid none none solid ;
-box-shadow: inset 0px 5px 1px 0px hsla(65, 40%, 85%, 0.6) ;
+box-shadow: inset 0px 5px 20px 2px hsla(65, 20%, 90%, 0.4) ;
 opacity: 1 ;
 }
 .ellipse:hover > .astre{
@@ -233,6 +233,7 @@ border-style: none solid solid none ;
 box-shadow: inset -1px 0px 0px 0px hsla(65, 40%, 85%, 0.6) ;
 animation: rotation linear infinite ;
 opacity: 0.9 ;
+z-index: 8 ;
 }
 
 .astre{
