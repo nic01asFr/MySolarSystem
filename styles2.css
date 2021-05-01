@@ -1,0 +1,381 @@
+:root{
+zoom: 0.25 ;
+font-size: 1.3px ;
+font-family: 'Pacifico', cursive ;
+
+--bg-simple: url("images/stars-bg-2.png") ;
+--bg-galaxy: url("images/milky-way-sunlight2.jpg") ;
+
+--start-angle: -90deg ;
+--stop-angle: calc(360deg + var(--start-angle)) ;
+
+--start-angle-ell: calc(-90deg + var(--start-angle)) ;
+--stop-angle-ell: calc(360deg + var(--start-angle-ell)) ;
+
+--r-sun: 570em ;
+--r-mercury: 2em ;
+--r-venus: 5em ;
+--r-earth: 6em ;
+--r-mars: 3em ;
+--r-jupiter: 59em ;
+--r-saturne: 49em ;
+--r-uranus: 21em ;
+--r-neptune: 20em ;
+
+--ph-sun: 0em ;
+--ph-mercury: 9.4em ;
+--ph-venus: 21.9em ;
+--ph-earth: 30.1em ;
+--ph-mars: 42.4em ;
+--ph-jupiter: 151.8em ;
+--ph-saturne: 276.4em ;
+--ph-uranus: 560.7em ;
+--ph-neptune: 913.9em ;
+
+--ah-sun: 0em ;
+--ah-mercury: 14.4em ;
+--ah-venus: 22.3em ;
+--ah-earth: 31.1em ;
+--ah-mars: 51em ;
+--ah-jupiter: 167.4em ;
+--ah-saturne: 308.2em ;
+--ah-uranus: 616em ;
+--ah-neptune: 929.7em ;
+
+--color-mercury: hsla(25, 90%, 50%, 0.8) ;
+--color-venus: hsla(60, 90%, 55%, 0.8) ;
+--color-earth: hsla(210, 98%, 40%, 0.8) ;
+--color-mars: hsla(0, 91%, 51%, 0.8) ;
+--color-jupiter: hsla(300, 45%, 50%, 0.8) ;
+--color-saturne: hsla(45, 10%, 90%, 0.8) ;
+--color-uranus: hsla(100, 50%, 50%, 0.8) ;
+--color-neptune: hsla(210, 90%, 60%, 0.8) ;
+
+--color-rocket: hsla(0, 20%, 80%) ;
+
+--bg-width: calc(4* var(--ah-neptune) + var(--r-sun)*0.5) ;
+--bg-height: calc(4* var(--ph-neptune) + var(--r-sun)*0.5) ;
+}
+
+
+body{
+position: absolute ;
+display: flex ;
+flex-direction: column ;
+justify-content: center ;
+align-items: center ;
+padding: 0 ;
+margin: 0 ;
+width: 100% ;
+height: auto ;
+box-sizing: border-box ;
+background: var(--bg-simple) ;
+background-size: 100% ;
+}
+
+#top{
+width: 100% ;
+padding: 0 ;
+margin: 0 ;
+}
+
+#header{
+position: relative ;
+width: auto ;
+height: auto ;
+display: flex ;
+justify-content: flex-start ;
+align-items: flex-end ;
+background-color: white ;
+background: url("images/flou2-500x500.png") ;
+background-size: 100% 100% ;
+background-opacity: 0.8 ;
+z-index: 11 ;
+font-size: 300px ;
+}
+
+#rocket-window{
+width: 1fr ;
+height: 1em ;
+display: flex ;
+align-items: center ;
+
+}
+
+#fuselage{
+display: flex ;
+width: 100% ;
+width: 1.5em ;
+height: 0.6em ;
+background: linear-gradient( var(--color-rocket) 60% , white 100% ) ;
+z-index: 10 ;
+border-radius: 15% 675% 65% 15% ;
+transform: translateX(-1.5em) ;
+box-shadow: -5px 2px 5px 2px white ; 
+}
+#hublot{
+width: 0.65em ;
+height: 0.35em ;
+align-self: center ;
+background: linear-gradient( hsla(0, 0%, 16%, 0.3) 60% , hsla(187, 33%, 75%, 0.3) 100% ) ;
+opacity: 0.9 ;
+border-radius: 0px 675% 55% 0px ;
+transform: translate(0.7em, 0.05em) ;
+border: 1px solid white ;
+}
+
+#cercle-bottom{
+width: 1.8em ;
+height: 0.8em ;
+background: url("images/flou2-500x500.png") ;
+background-size: 100% 100% ;
+background-opacity: 0.8 ;
+border-radius: 150% 150% 150% 150% ;
+box-shadow: inset 3px 3px 20px 2px hsla(0, 10%, 10%, 0.9); 
+z-index: 9 ;
+transform: translateX(10%) ;
+opacity: 0.9 ;
+}
+#cercle-top{
+width: 1.5em ;
+height: 0.7em ;
+background: radial-gradient( ellipse at 70%, white, yellow 35%, orange 55%, red 90%);
+border-radius: 150% 150% 150% 150%  ;
+z-index: 8 ;
+transform: translateX(-90%) ;
+box-shadow: 3px 0px 5px 2px white ;
+box-shadow: inset 3px -3px 20px 2px black ; 
+}
+
+#title{
+font-family: 'Bungee', cursive;
+box-sizing: content-box ;
+line-height: 0.9em ;
+margin: 0 ;
+background: var(--bg-simple) ;
+background-size: 100% ;
+width: auto ;
+height: 1em ;
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+text-align: left ;
+z-index: 12 ;
+font-variant: small-caps ;
+
+}
+
+
+
+#milky-way{
+position: relative ;
+<!-- overflow: hidden ; -->
+padding: 0 ;
+margin: 0 ;
+width: calc(var(--bg-width)+ var(--r-neptune)) ;
+height: calc(var(--bg-height)+ var(--r-neptune)) ;
+display: flex ;
+flex-direction: column ;
+justify-content: center ;
+align-items: center ;
+background-image: var(--bg-simple) ;
+background-position: center ;
+background-repeat: no-repeat ;
+background-size: cover ;
+box-sizing: border-box ;
+
+<!-- transform-origin: 50% 100%; -->
+<!-- transform: perspective(200px) rotateX(5deg); -->
+<!-- bottom: 0% ; -->
+
+}
+
+.astre:hover{
+opacity: 1 ;
+animation-play-state: paused ;
+}
+.ellipse:hover{
+border-width: 20px 0px 0px 10px ;
+border-style: solid none none solid ;
+box-shadow: inset 0px 5px 1px 0px hsla(65, 40%, 85%, 0.6) ;
+opacity: 1 ;
+}
+.ellipse:hover > .astre{
+opacity: 1 ;
+animation-play-state: paused ;
+}
+
+@keyframes rotation{
+  from { transform:rotate(var(--start-angle)) ; }
+  to { transform:rotate(var(--stop-angle)) ; }
+}
+
+#sun{
+width: var(--r-sun) ;
+height: var(--r-sun) ;
+background-image: url("images/style2/sun2.png") ;
+position: absolute ;
+border-radius: 50% ;
+background-size:  100% ;
+background-position: center ;
+background-repeat: no-repeat ;
+opacity: 0.8 ;
+z-index: 8 ;
+}
+
+.ellipse{
+position: absolute ;
+display: flex ;
+justify-content: center ;
+align-items: center ;
+border-radius: 50% ; 
+border-width: 0px 10px 10px 0px ;
+border-style: none solid solid none ;
+box-shadow: inset -1px 0px 0px 0px hsla(65, 40%, 85%, 0.6) ;
+animation: rotation linear infinite ;
+opacity: 0.9 ;
+}
+
+.astre{
+position: relative ;
+border-radius: 50% ;
+background-size:  100% ;
+background-position: center ;
+background-repeat: no-repeat ;
+box-shadow : 3px 3px 20px 10px white ;
+opacity: 0.8 ;
+z-index: 8 ;
+
+<!-- animation: revolution_astre linear infinite ; -->
+<!-- transform: translate( -->
+<!-- calc(var(--ah) + 0.5* var(--r-sun)),  -->
+<!-- calc(var(--ph) + 0.5* var(--r-sun)) ) ; -->
+animation: inherit ;
+transform: translate( calc((var(--ah) + 0.5* var(--r-sun))*1.41421356237) ) ;
+
+}
+
+.astre.mercury{
+width: var(--r-mercury) ;
+height: var(--r-mercury) ;
+--ph: var(--ph-mercury) ;
+--ah: var(--ah-mercury) ;
+background-image: url("images/style2/mercury.png") ;
+box-shadow : 3px 3px 20px 10px var(--color-mercury) ;
+}
+.astre.venus{
+width: var(--r-venus) ;
+height: var(--r-venus) ;
+--ph: var(--ph-venus) ;
+--ah: var(--ah-venus) ;
+background-image: url("images/style2/venus.png") ;
+box-shadow : 3px 3px 20px 10px var(--color-venus) ;
+
+}
+.astre.earth{
+width: var(--r-earth) ;
+height: var(--r-earth) ;
+--ph: var(--ph-earth) ;
+--ah: var(--ah-earth) ;
+background-image: url("images/style2/earth.png") ;
+box-shadow : 3px 3px 20px 10px var(--color-earth) ;
+}
+.astre.mars{
+width: var(--r-mars) ;
+height: var(--r-mars) ;
+--ph: var(--ph-mars) ;
+--ah: var(--ah-mars) ;
+background-image: url("images/style2/mars.png") ;
+box-shadow : 3px 3px 20px 10px var(--color-mars) ;
+}
+.astre.jupiter{
+width: var(--r-jupiter) ;
+height: var(--r-jupiter) ;
+--ph: var(--ph-jupiter) ;
+--ah: var(--ah-jupiter) ;
+background-image: url("images/style2/jupiter.png") ;
+box-shadow : 3px 3px 20px 10px var(--color-jupiter) ;
+}
+.astre.saturne{
+width: var(--r-saturne) ;
+height: var(--r-saturne) ;
+--ph: var(--ph-saturne) ;
+--ah: var(--ah-saturne) ;
+background-image: url("images/style2/saturne.png") ;
+box-shadow : 3px 3px 20px 10px var(--color-saturne) ;
+background-size: 200% ;
+}
+.astre.uranus{
+width: var(--r-uranus) ;
+height: var(--r-uranus) ;
+--ph: var(--ph-uranus) ;
+--ah: var(--ah-uranus) ;
+background-image: url("images/style2/uranus.png") ;
+box-shadow : 3px 3px 20px 10px var(--color-uranus) ;
+}
+.astre.neptune{
+width: var(--r-neptune) ;
+height: var(--r-neptune) ;
+--ph: var(--ph-neptune) ;
+--ah: var(--ah-neptune) ;
+background-image: url("images/style2/neptune.png") ;
+box-shadow : 3px 3px 20px 10px var(--color-neptune) ;
+}
+
+
+.ellipse.mercury{
+width: calc((2*var(--ah-mercury) + var(--r-sun))*1.41421356237 + 0.5* var(--r-mercury)) ;
+height: calc((2*var(--ph-mercury) + var(--r-sun))*1.41421356237 + 0.5* var(--r-mercury)) ;
+border-color: var(--color-mercury) ;
+animation-duration: 3s ;
+z-index: 7 ;
+}
+.ellipse.venus{
+width: calc((2*var(--ah-venus) + var(--r-sun))*1.41421356237 + 0.5* var(--r-venus)) ;
+height: calc((2*var(--ph-venus) + var(--r-sun))*1.41421356237 + 0.5* var(--r-venus)) ;
+border-color: var(--color-venus) ;
+animation-duration: 7s ;
+z-index: 6 ;
+}
+.ellipse.earth{
+width: calc((2*var(--ah-earth) + var(--r-sun))*1.41421356237 + 0.5* var(--r-earth)) ;
+height: calc((2*var(--ph-earth) + var(--r-sun))*1.41421356237 + 0.5* var(--r-earth)) ;
+border-color: var(--color-earth) ;
+animation-duration: 12s ;
+z-index: 5 ;
+}
+.ellipse.mars{
+width: calc((2*var(--ah-mars) + var(--r-sun))*1.41421356237 + 0.5* var(--r-mars)) ;
+height: calc((2*var(--ph-mars) + var(--r-sun))*1.41421356237 + 0.5* var(--r-mars)) ;
+border-color: var(--color-mars) ;
+animation-duration: 23s ;
+z-index: 4 ;
+}
+.ellipse.jupiter{
+width: calc((2*var(--ah-jupiter) + var(--r-sun))*1.41421356237 + 0.5* var(--r-jupiter) + 0.5*var(--r-jupiter)) ;
+height: calc((2*var(--ph-jupiter) + var(--r-sun))*1.41421356237 + 0.5* var(--r-jupiter) + 0.5*var(--r-jupiter)) ;
+border-color: var(--color-jupiter) ;
+animation-duration: 144s ;
+z-index: 3 ;
+}
+.ellipse.saturne{
+width: calc((2*var(--ah-saturne) + var(--r-sun))*1.41421356237 + 0.5* var(--r-saturne)) ;
+height: calc((2*var(--ph-saturne) + var(--r-sun))*1.41421356237 + 0.5* var(--r-saturne)) ;
+border-color: var(--color-saturne) ;
+animation-duration: 358s ;
+z-index: 2 ;
+}
+.ellipse.uranus{
+width: calc((2*var(--ah-uranus) + var(--r-sun))*1.41421356237 + 0.5* var(--r-uranus)) ;
+height: calc((2*var(--ph-uranus) + var(--r-sun))*1.41421356237 + 0.5* var(--r-uranus)) ;
+border-color: var(--color-uranus) ;
+animation-duration: 1022s ;
+z-index: 1 ;
+}
+.ellipse.neptune{
+width: calc((2*var(--ah-neptune) + var(--r-sun)) *1.41421356237 + 0.5* var(--r-neptune)) ;
+height: calc((2*var(--ph-neptune) + var(--r-sun)) *1.41421356237 + 0.5* var(--r-neptune)) ;
+border-color: var(--color-neptune) ;
+animation-duration: 2005s ;
+z-index: 0 ;
+}
+
